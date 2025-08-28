@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>💍 Aisha & Rohan — 12 Dec 2025</title>
+  <meta name="description" content="You're invited to the wedding of Aisha & Rohan. Find all the details, RSVP, and share blessings!" />
+
+  <!-- Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f0f12;
+      --card:#14141a;
+      --soft:#1e1e25;
+      --text:#f7f7fb;
+      --muted:#bdbdd2;
+      --brand:#e2336b; /* rani pink */
+      --brand-2:#f6c453; /* haldi gold */
+      --ring:#57d4b5; /* mint */
+      --shadow: 0 20px 40px rgba(0,0,0,.35);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 800px at 110% -10%, rgba(242, 99, 152, .15), transparent 60%),
+              radial-gradient(900px 700px at -10% 110%, rgba(246, 196, 83, .12), transparent 55%), var(--bg);
+              color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    .container{width:min(1100px, 92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:40;background:rgba(15,15,18,.55);backdrop-filter:saturate(180%) blur(10px);}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .nav .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .pill{display:inline-flex;gap:10px;align-items:center;background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      padding:8px 14px;border-radius:999px;font-weight:600}
+    .nav a{opacity:.9;margin-left:18px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:40px 0 26px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:26px}
+    .names{font-family:"Playfair Display", serif;font-size:clamp(36px, 5vw, 64px);line-height:1.05;margin:6px 0 10px}
+    .date-line{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted)}
+    .countdown{display:flex;gap:10px;margin:18px 0 8px}
+    .timebox{background:var(--soft);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:12px 14px;text-align:center;min-width:72px}
+    .timebox .num{font-size:26px;font-weight:700}
+    .tag{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;border:1px dashed rgba(255,255,255,.22);color:var(--muted)}
+
+    .hero-img{position:relative;overflow:hidden}
+    .hero-img::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 10% 0%, rgba(226,51,107,.25), transparent 50%)}
+    .hero-img img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius)}
+
+    /* Section */
+    section{padding:36px 0}
+    .section-title{font-family:"Playfair Display", serif;font-size:clamp(22px,3.8vw,34px);margin:0 0 12px}
+    .muted{color:var(--muted)}
+
+    /* Events */
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr} .grid.cols-2{grid-template-columns:1fr}}
+    .event{padding:18px}
+    .event h3{margin:0 0 6px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .chip{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:13px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));font-weight:600}
+    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2));border:0}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    @media (max-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .ph{aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg, rgba(226,51,107,.25), rgba(246,196,83,.25));border:1px solid rgba(255,255,255,.12)}
+
+    /* RSVP */
+    .rsvp{padding:18px}
+    .input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--text)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.row{grid-template-columns:1fr}}
+
+    /* Footer */
+    footer{padding:36px 0 48px;color:var(--muted)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+
+    /* Simple modal for invite code */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:100}
+    .modal .modal-card{width:min(520px, 92vw)}
+  </style>
+</head>
+<body>
+  <!-- Optional Invite Code Gate: set INVITE_CODE to a non-empty string to require entry -->
+  <div class="modal" id="inviteGate">
+    <div class="card modal-card" style="padding:22px">
+      <h2 class="section-title" style="margin-bottom:6px">Welcome, family! 🔐</h2>
+      <p class="muted">Enter the invite code from your card/WhatsApp to view details.</p>
+      <div class="row" style="margin:14px 0 8px">
+        <input id="codeInput" class="input" placeholder="Enter invite code" />
+        <button class="btn primary" onclick="checkInvite()">Unlock</button>
+      </div>
+      <p id="codeErr" class="muted" style="color:#ff9aa2"></p>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21c5-3.5 8-6.5 8-10a5 5 0 0 0-9-3 5 5 0 0 0-9 3c0 3.5 3 6.5 10 10Z" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span>Aisha & Rohan</span>
+      </div>
+      <nav>
+        <a href="#events">Events</a>
+        <a href="#venue">Venue</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#gallery">Photos</a>
+        <a href="#travel">Travel</a>
+      </nav>
+      <a class="pill" href="#rsvp">RSVP Now</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card card">
+        <div class="tag">You're invited to an Indian wedding ✨</div>
+        <h1 class="names">Aisha <span style="color:var(--brand)">&</span> Rohan</h1>
+        <div class="date-line">
+          <span>📅 12 December 2025</span>
+          <span>•</span>
+          <span>📍 Jaipur, Rajasthan</span>
+        </div>
+
+        <div class="countdown" id="countdown"></div>
+
+        <div class="chips">
+          <a class="btn" id="addToCal">➕ Add to Calendar</a>
+          <a class="btn" href="#venue">📍 Get Directions</a>
+          <button class="btn" onclick="shareInvite()">🤝 Share with Relatives</button>
+        </div>
+      </div>
+      <div class="hero-img">
+        <!-- Replace with your photos -->
+        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1600&auto=format&fit=crop" alt="Couple" />
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+      <h2 class="section-title">Wedding Functions</h2>
+      <p class="muted">Join us for the celebrations across three beautiful days.</p>
+      <div class="grid cols-3" style="margin-top:14px">
+        <div class="card event">
+          <h3>Mehndi</h3>
+          <p class="muted">Thu, 11 Dec • 4:00 PM<br/>Family Lawn, Suryamahal</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Suryamahal+Jaipur">📍 Map</a>
+            <span class="chip">Dress: Green/Yellow</span>
+          </div>
+        </div>
+        <div class="card event">
+          <h3>Sangeet</h3>
+          <p class="muted">Thu, 11 Dec • 7:30 PM<br/>The Peacock Ballroom</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Peacock+Ballroom+Jaipur">📍 Map</a>
+            <span class="chip">Dress: Bling!</span>
+          </div>
+        </div>
+        <div class="card event">
+          <h3>Haldi</h3>
+          <p class="muted">Fri, 12 Dec • 10:00 AM<br/>Courtyard, Suryamahal</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Suryamahal+Jaipur">📍 Map</a>
+            <span class="chip">Dress: Yellow/White</span>
+          </div>
+        </div>
+        <div class="card event">
+          <h3>Baraat & Pheras</h3>
+          <p class="muted">Fri, 12 Dec • 7:00 PM<br/>Lotus Lawn, Suryamahal</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Suryamahal+Jaipur">📍 Map</a>
+            <span class="chip">Dress: Traditional/Indian</span>
+          </div>
+        </div>
+        <div class="card event">
+          <h3>Reception</h3>
+          <p class="muted">Sat, 13 Dec • 7:30 PM<br/>Grand Pavilion</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Grand+Pavilion+Jaipur">📍 Map</a>
+            <span class="chip">Dress: Formal/Indo-western</span>
+          </div>
+        </div>
+        <div class="card event">
+          <h3>Live Stream</h3>
+          <p class="muted">Can’t make it? Join virtually.</p>
+          <div class="chips">
+            <a class="btn" id="liveBtn" target="_blank" href="#">▶ Watch</a>
+            <span class="chip">Link goes here</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section id="venue">
+      <h2 class="section-title">Venue</h2>
+      <div class="grid cols-2" style="margin-top:10px">
+        <div class="card" style="padding:18px">
+          <h3>Suryamahal Palace, Jaipur</h3>
+          <p class="muted">Amer Road, Jaipur, Rajasthan 302001</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=Suryamahal+Jaipur">🧭 Start Navigation</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/place/Suryamahal+Jaipur">🌐 View on Maps</a>
+          </div>
+        </div>
+        <div class="card" style="overflow:hidden">
+          <iframe title="map" width="100%" height="320" style="border:0;display:block" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-EXAMPLE-KEY-CHANGE&zoom=14&q=Suryamahal+Jaipur">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+      <h2 class="section-title">RSVP</h2>
+      <p class="muted">Please let us know if you’ll join us. You’ll receive a confirmation on WhatsApp/SMS.</p>
+      <div class="card rsvp">
+        <!-- OPTION A (default): Email submission without a server. Change 'to' address. -->
+        <!-- For Google Form/Sheet collection, replace this entire <form> with your Google Form embed. -->
+        <form id="rsvpForm">
+          <div class="row">
+            <input class="input" name="name" placeholder="Full Name" required />
+            <input class="input" name="phone" placeholder="Phone / WhatsApp" required />
+          </div>
+          <div class="row" style="margin-top:12px">
+            <select class="input" name="attending" required>
+              <option value="">Will you attend?</option>
+              <option>Yes, both days</option>
+              <option>Only wedding day</option>
+              <option>Only reception</option>
+              <option>No, will join online</option>
+            </select>
+            <select class="input" name="guests" required>
+              <option value="">No. of Guests</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4+</option>
+            </select>
+          </div>
+          <textarea class="input" name="message" rows="3" style="margin-top:12px" placeholder="Any notes (allergies, wheelchair access, etc.)"></textarea>
+          <div style="display:flex;gap:12px;align-items:center;margin-top:14px">
+            <button class="btn primary" type="submit">Send RSVP</button>
+            <span id="rsvpStatus" class="muted"></span>
+          </div>
+        </form>
+      </div>
+      <small class="muted">Tip: Replace RSVP with a Google Form to auto-collect in Sheets (Insert ➜ Form ➜ Get pre-filled link ➜ Embed).</small>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2 class="section-title">Photos</h2>
+      <div class="gallery" style="margin-top:10px">
+        <div class="ph"></div><div class="ph"></div><div class="ph"></div>
+        <div class="ph"></div><div class="ph"></div><div class="ph"></div>
+        <div class="ph"></div><div class="ph"></div><div class="ph"></div>
+        <div class="ph"></div><div class="ph"></div><div class="ph"></div>
+      </div>
+      <div class="chips" style="margin-top:14px">
+        <a class="btn" href="#">📸 Upload link (add your Google Drive/Dropbox folder)</a>
+      </div>
+    </section>
+
+    <!-- TRAVEL & STAY -->
+    <section id="travel">
+      <h2 class="section-title">Travel & Stay</h2>
+      <div class="grid cols-2" style="margin-top:10px">
+        <div class="card event">
+          <h3>Nearest Airport / Station</h3>
+          <p class="muted">Jaipur International Airport (JAI) • Jaipur Jn. Railway Station (JP)</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jaipur+International+Airport">✈️ Airport</a>
+            <a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Jaipur+Junction+Railway+Station">🚆 Station</a>
+          </div>
+        </div>
+        <div class="card event">
+          <h3>Recommended Hotels</h3>
+          <p class="muted">(Replace with your list & group rates)</p>
+          <ul class="muted" style="margin-top:6px">
+            <li>Hotel Peacock — 10 min from venue</li>
+            <li>Lotus Heritage — 12 min from venue</li>
+            <li>Amber View Inn — 15 min from venue</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact the Families</h2>
+      <div class="grid cols-2" style="margin-top:10px">
+        <div class="card event">
+          <h3>Bride's Family</h3>
+          <p class="muted">Sana Khan • +91 9XXXXXXXXX</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://wa.me/91XXXXXXXXXX?text=Hi%20we%20have%20a%20question%20about%20the%20wedding">WhatsApp</a>
+          </div>
+        </div>
+        <div class="card event">
+          <h3>Groom's Family</h3>
+          <p class="muted">Vikram Mehta • +91 9XXXXXXXXX</p>
+          <div class="chips">
+            <a class="btn" target="_blank" href="https://wa.me/91XXXXXXXXXX?text=Hi%20we%20have%20a%20question%20about%20the%20wedding">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="tag">With love and blessings</div>
+        <p style="margin-top:8px">Thank you for being part of our special day. Your presence means the world to us. 🫶</p>
+      </div>
+      <div>
+        <p class="muted">Languages</p>
+        <div class="chips">
+          <button class="btn" onclick="toggleLang('en')">English</button>
+          <button class="btn" onclick="toggleLang('hi')">हिंदी (lite)</button>
+        </div>
+      </div>
+      <div>
+        <p class="muted">Share</p>
+        <div class="chips">
+          <button class="btn" onclick="shareInvite()">Native Share</button>
+          <a class="btn" id="waShare" target="_blank" href="#">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:16px">
+      <small class="muted">© 2025 Aisha & Rohan • Built with ❤️ for family & friends</small>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================
+       CONFIG — Edit these!
+       ========================= */
+    const COUPLE = { bride: "Aisha", groom: "Rohan" };
+    const CITY = "Jaipur, Rajasthan";
+    const WEDDING_DATE = new Date("2025-12-12T19:00:00+05:30"); // Local IST time
+    const LIVE_LINK = "https://youtube.com/your-live-link"; // Replace or leave "#"
+    const INVITE_CODE = ""; // e.g. "AR125" to require relatives to enter code
+    const CONTACTS = {
+      bride: { name: "Sana Khan", phone: "91XXXXXXXXXX" },
+      groom: { name: "Vikram Mehta", phone: "91XXXXXXXXXX" }
+    };
+
+    /* ===== Invite Code Gate ===== */
+    const gateEl = document.getElementById('inviteGate');
+    function openGate(){ gateEl.style.display = 'flex'; }
+    function closeGate(){ gateEl.style.display = 'none'; }
+    function checkInvite(){
+      const val = document.getElementById('codeInput').value.trim();
+      if(val.toUpperCase() === INVITE_CODE.toUpperCase()){
+        localStorage.setItem('invite_ok','1'); closeGate();
+      } else {
+        document.getElementById('codeErr').textContent = 'Wrong code. Please check your card.';
+      }
+    }
+
+    /* ===== Countdown ===== */
+    function renderCountdown(){
+      const el = document.getElementById('countdown');
+      function tick(){
+        const now = new Date();
+        const diff = WEDDING_DATE - now;
+        if(diff <= 0){ el.innerHTML = '<span class="chip">We are married! 🎉</span>'; return; }
+        const s = Math.floor(diff/1000);
+        const d = Math.floor(s/86400);
+        const h = Math.floor((s%86400)/3600);
+        const m = Math.floor((s%3600)/60);
+        const sec = s%60;
+        el.innerHTML = [
+          box('Days', d), box('Hours', h), box('Minutes', m), box('Seconds', sec)
+        ].join('');
+      }
+      function box(label, num){
+        return `<div class="timebox"><div class="num">${num}</div><div class="muted">${label}</div></div>`
+      }
+      tick(); setInterval(tick, 1000);
+    }
+
+    /* ===== Add to Calendar (.ics) ===== */
+    function initICS(){
+      const a = document.getElementById('addToCal');
+      const dtStart = formatICS(WEDDING_DATE);
+      const dtEnd = formatICS(new Date(WEDDING_DATE.getTime() + 3*60*60*1000));
+      const body = [
+        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Family Wedding//EN','BEGIN:VEVENT',
+        `UID:${Date.now()}@familywedding`,
+        `DTSTAMP:${formatICS(new Date())}`,
+        `DTSTART:${dtStart}`,
+        `DTEND:${dtEnd}`,
+        'SUMMARY:Aisha & Rohan — Wedding & Pheras',
+        'LOCATION:Suryamahal Palace, Jaipur',
+        'DESCRIPTION:Join us for the celebrations!',
+        'END:VEVENT','END:VCALENDAR'
+      ].join('\n');
+      const blob = new Blob([body], {type:'text/calendar'});
+      const url = URL.createObjectURL(blob);
+      a.href = url; a.download = 'Aisha-Rohan-Wedding.ics';
+    }
+    function pad(n){return (n<10?'0':'')+n}
+    function formatICS(d){
+      // YYYYMMDDTHHMMSS in local time without timezone suffix
+      return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+    }
+
+    /* ===== Share Helpers ===== */
+    function shareInvite(){
+      const url = window.location.href;
+      const text = `You're invited to ${COUPLE.bride} & ${COUPLE.groom}'s wedding in ${CITY} on 12 Dec 2025. Details: ${url}`;
+      if(navigator.share){ navigator.share({title:'Wedding Invite', text, url}).catch(()=>{}); }
+      else { window.open(`https://wa.me/?text=${encodeURIComponent(text)}`,'_blank'); }
+    }
+
+    function initShareLinks(){
+      const wa = document.getElementById('waShare');
+      const url = window.location.href;
+      const text = `Join ${COUPLE.bride} & ${COUPLE.groom}'s wedding! Details: ${url}`;
+      wa.href = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    }
+
+    /* ===== Live Stream link ===== */
+    const liveBtn = document.getElementById('liveBtn');
+    if(LIVE_LINK && LIVE_LINK !== '#'){ liveBtn.href = LIVE_LINK; } else { liveBtn.removeAttribute('href'); }
+
+    /* ===== Language toggle (simple demo) ===== */
+    function toggleLang(code){
+      const map = {
+        en: {
+          title: 'You\'re invited to an Indian wedding ✨'
+        },
+        hi: {
+          title: 'शादी में आपका स्वागत है ✨'
+        }
+      };
+      const t = map[code] || map.en;
+      document.querySelector('.tag').textContent = t.title;
+    }
+
+    /* ===== RSVP (email via mailto fallback) ===== */
+    const form = document.getElementById('rsvpForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const summary = `RSVP for ${COUPLE.bride} & ${COUPLE.groom}\n\nName: ${data.name}\nPhone: ${data.phone}\nAttending: ${data.attending}\nGuests: ${data.guests}\nNotes: ${data.message || '-'}\n`;
+      const to = 'youremail@example.com'; // <-- change this email
+      const mail = `mailto:${to}?subject=${encodeURIComponent('RSVP — Wedding')}&body=${encodeURIComponent(summary)}`;
+      document.getElementById('rsvpStatus').textContent = 'Opening your mail app…';
+      window.location.href = mail;
+    });
+
+    /* ===== On Load ===== */
+    window.addEventListener('DOMContentLoaded', ()=>{
+      document.title = `${COUPLE.bride} & ${COUPLE.groom} — 12 Dec 2025`;
+      renderCountdown();
+      initICS();
+      initShareLinks();
+      if(INVITE_CODE){
+        if(localStorage.getItem('invite_ok')==='1') closeGate(); else openGate();
+      }
+    });
+  </script>
+</body>
+</html>
